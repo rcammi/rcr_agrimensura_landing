@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RCR | Estudio de Agrimensura y Topografía</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      var h = new Date().getHours();
+      var saved = localStorage.getItem('rcr-theme');
+      document.documentElement.setAttribute('data-theme', saved || ((h >= 20 || h < 7) ? 'dark' : 'light'));
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <div class="navbar__brand">
+        <span class="brand-rcr">RCR</span>
+        <span class="brand-sub">Agrimensura &amp; Topografía</span>
+      </div>
+      <nav class="navbar__links">
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto" class="btn btn--outline">Consultar</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+          <i class="ti ti-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="container hero__content">
+      <img src="static/logo.jpg.jpeg" alt="RCR Agrimensura y Topografía" class="hero__logo" />
+      <h1 class="hero__title">Mediciones precisas.<br />Resultados confiables.</h1>
+      <p class="hero__desc">
+        Mensuras, estados parcelarios, revalúos y relevamientos topográficos
+        con respaldo técnico y atención personalizada.
+      </p>
+      <a href="#contacto" class="btn btn--primary">Solicitar presupuesto</a>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICIOS ═══ -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <h2 class="section__title">Servicios</h2>
+      <p class="section__subtitle">Agrimensura legal y topografía técnica para particulares, empresas y organismos.</p>
+      <div class="services-grid">
+
+        <!-- ─── Agrimensura Legal ─── -->
+        <div class="services-group-header">
+          <h3>Agrimensura Legal</h3>
+          <p>Trámites catastrales y registrales ante ARBA y el Registro de la Propiedad.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-ruler-measure"></i></div>
+          <h3>Mensura</h3>
+          <p>Delimitación y medición de parcelas para escrituras, subdivisiones, unificaciones y loteos en planta urbana y rural.</p>
+          <div class="service-card__tags">
+            <span class="tag">urbana y rural</span>
+            <span class="tag">subdivisión</span>
+            <span class="tag">unificación</span>
+            <span class="tag">loteos</span>
+            <span class="tag">servidumbres</span>
+            <span class="tag">derecho de superficie</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-polygon"></i></div>
+          <h3>Amojonamiento</h3>
+          <p>Determinación y materialización de límites parcelarios.</p>
+          <div class="service-card__tags">
+            <span class="tag">cercos y límites</span>
+            <span class="tag">conflictos con linderos</span>
+            <span class="tag">previo a obra</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-building"></i></div>
+          <h3>Propiedad Horizontal (PH)</h3>
+          <p>Subdivisión de edificios bajo régimen de PH clásica o Conjuntos Inmobiliarios: countries, barrios cerrados y parques industriales.</p>
+          <div class="service-card__tags">
+            <span class="tag">PH clásica</span>
+            <span class="tag">conjuntos inmobiliarios</span>
+            <span class="tag">estado constructivo</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-id-badge"></i></div>
+          <h3>Cédula Catastral</h3>
+          <p>Verificación y constitución del estado parcelario del inmueble, obligatoria para compraventas, hipotecas y escrituras.</p>
+          <div class="service-card__tags">
+            <span class="tag">compraventa</span>
+            <span class="tag">hipotecas</span>
+            <span class="tag">escrituras</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-file-description"></i></div>
+          <h3>Declaraciones Juradas (DDJJ)</h3>
+          <p>Presentación de mejoras, ampliaciones o demoliciones ante ARBA para actualizar la valuación fiscal del inmueble.</p>
+          <div class="service-card__tags">
+            <span class="tag">revalúo</span>
+            <span class="tag">mejoras</span>
+            <span class="tag">valor tierra</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-satellite"></i></div>
+          <h3>Georreferenciación</h3>
+          <p>Determinación de coordenadas de parcelas vinculadas al Sistema Nacional POSGAR07 y gestión del trámite ante ARBA.</p>
+          <div class="service-card__tags">
+            <span class="tag">POSGAR07</span>
+            <span class="tag">ARBA</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-gavel"></i></div>
+          <h3>Usucapión</h3>
+          <p>Mensura para prescripción adquisitiva veinteñal o decenal.</p>
+          <div class="service-card__tags">
+            <span class="tag">prescripción adquisitiva</span>
+            <span class="tag">judicial</span>
+            <span class="tag">extrajudicial</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-file-search"></i></div>
+          <h3>Informe Técnico de Inmueble</h3>
+          <p>Análisis técnico-legal del estado de un inmueble: situación catastral y dominial, zonificación, posibilidad de subdivisión y coherencia con los planos de obra.</p>
+          <div class="service-card__tags">
+            <span class="tag">compraventa</span>
+            <span class="tag">due diligence</span>
+            <span class="tag">zonificación</span>
+            <span class="tag">servicios básicos</span>
+            <span class="tag">subdivisión</span>
+            <span class="tag">topografía</span>
+          </div>
+        </div>
+
+        <!-- ─── Topografía ─── -->
+        <div class="services-group-header">
+          <h3>Topografía</h3>
+          <p>Relevamientos, modelado del terreno y análisis espacial para obras, ingeniería y gestión del territorio.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-map-2"></i></div>
+          <h3>Relevamiento Planialtimétrico</h3>
+          <p>Relevamiento de terrenos para obras civiles, proyectos viales y urbanizaciones. Base para el diseño y la ejecución de proyectos.</p>
+          <div class="service-card__tags">
+            <span class="tag">obras civiles</span>
+            <span class="tag">vialidad</span>
+            <span class="tag">urbanismo</span>
+            <span class="tag">planialtimetría</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-map"></i></div>
+          <h3>Productos Cartográficos</h3>
+          <p>Modelos digitales de terreno (MDT) y de elevación (MDE), curvas de nivel, perfiles longitudinales y transversales, y ortomosaicos.</p>
+          <div class="service-card__tags">
+            <span class="tag">MDT / MDE</span>
+            <span class="tag">curvas de nivel</span>
+            <span class="tag">perfiles</span>
+            <span class="tag">ortomosaicos</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-crosshair"></i></div>
+          <h3>Control de Obra y Replanteo</h3>
+          <p>Implantación de proyectos en campo, verificación de cotas y alineaciones durante la ejecución de obras.</p>
+          <div class="service-card__tags">
+            <span class="tag">replanteo</span>
+            <span class="tag">control de cotas</span>
+            <span class="tag">verificación de avances</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-cube"></i></div>
+          <h3>Cálculos Volumétricos</h3>
+          <p>Determinación de volúmenes en canteras, movimientos de tierra y montañas de acopio de materiales.</p>
+          <div class="service-card__tags">
+            <span class="tag">canteras</span>
+            <span class="tag">acopios</span>
+            <span class="tag">movimiento de suelos</span>
+            <span class="tag">cubicación</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-world"></i></div>
+          <h3>GIS y Teledetección</h3>
+          <p>Análisis espacial, cálculo de índices espectrales y detección de objetos mediante imágenes satelitales.</p>
+          <div class="service-card__tags">
+            <span class="tag">índices espectrales</span>
+            <span class="tag">detección de objetos</span>
+            <span class="tag">análisis espacial</span>
+            <span class="tag">SIG</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon"><i class="ti ti-plant"></i></div>
+          <h3>Agricultura de Precisión</h3>
+          <p>Mapeo de lotes y análisis de índices de vegetación para la gestión de variabilidad en cultivos extensivos.</p>
+          <div class="service-card__tags">
+            <span class="tag">NDVI</span>
+            <span class="tag">lotes agrícolas</span>
+            <span class="tag">variabilidad de cultivos</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACTO / CTA ═══ -->
+  <section class="section section--alt" id="contacto">
+    <div class="container contacto__inner">
+      <h2 class="section__title">¿Necesitás un presupuesto?</h2>
+      <p class="section__subtitle">
+        Escribime directamente por WhatsApp y te respondo a la brevedad.
+        Sin compromiso.
+      </p>
+
+      <a
+        href="https://wa.me/5492364240644?text=Hola%20Renzo%2C%20quisiera%20consultar%20por%20un%20trabajo%20de%20agrimensura."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn--whatsapp"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Consultar por WhatsApp
+      </a>
+
+      <div class="contacto__datos">
+        <p><strong>Renzo Nicolas Cammi Rios</strong> — Ingeniero Agrimensor</p>
+        <p>
+          <span class="matricula">Mat. Prof. N° 2955 · CPA</span>
+        </p>
+        <p class="sin-cargo">Presupuestos sin cargo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">RCR · Estudio de Agrimensura y Topografía</p>
+      <p class="footer__copy">© 2025 Renzo Nicolas Cammi Rios · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      var icon = btn.querySelector('i');
+
+      function syncIcon(theme) {
+        icon.className = theme === 'dark' ? 'ti ti-sun' : 'ti ti-moon';
+      }
+
+      syncIcon(document.documentElement.getAttribute('data-theme'));
+
+      btn.addEventListener('click', function () {
+        var current = document.documentElement.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('rcr-theme', next);
+        syncIcon(next);
+      });
+    })();
+  </script>
+</body>
+</html>
