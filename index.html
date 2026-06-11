@@ -13,14 +13,14 @@
     (function () {
       var h = new Date().getHours();
       var saved = localStorage.getItem('rcr-theme');
-      document.documentElement.setAttribute('data-theme', saved || ((h >= 20 || h < 7) ? 'dark' : 'light'));
+      document.documentElement.setAttribute('data-theme', saved || ((h >= 19 || h < 7) ? 'dark' : 'light'));
     })();
   </script>
 </head>
 <body>
 
   <!-- ═══ NAVBAR ═══ -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="container navbar__inner">
       <div class="navbar__brand">
         <span class="brand-rcr">RCR</span>
@@ -29,11 +29,20 @@
       <nav class="navbar__links">
         <a href="#servicios">Servicios</a>
         <a href="#contacto" class="btn btn--outline">Consultar</a>
+      </nav>
+      <div class="navbar__actions">
         <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
           <i class="ti ti-moon"></i>
         </button>
-      </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+          <i class="ti ti-menu-2"></i>
+        </button>
+      </div>
     </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="#servicios" class="mobile-nav__link">Servicios</a>
+      <a href="#contacto" class="mobile-nav__link mobile-nav__link--cta">Solicitar presupuesto</a>
+    </nav>
   </header>
 
   <!-- ═══ HERO ═══ -->
@@ -274,8 +283,12 @@
 
   <script>
     (function () {
-      var btn = document.getElementById('theme-toggle');
-      var icon = btn.querySelector('i');
+      var btn         = document.getElementById('theme-toggle');
+      var icon        = btn.querySelector('i');
+      var hamburger   = document.getElementById('hamburger');
+      var hambIcon    = hamburger.querySelector('i');
+      var navbar      = document.getElementById('navbar');
+      var mobileLinks = document.querySelectorAll('.mobile-nav__link');
 
       function syncIcon(theme) {
         icon.className = theme === 'dark' ? 'ti ti-sun' : 'ti ti-moon';
@@ -289,6 +302,26 @@
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('rcr-theme', next);
         syncIcon(next);
+      });
+
+      function closeMenu() {
+        navbar.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hambIcon.className = 'ti ti-menu-2';
+      }
+
+      hamburger.addEventListener('click', function () {
+        var isOpen = navbar.classList.toggle('is-open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        hambIcon.className = isOpen ? 'ti ti-x' : 'ti ti-menu-2';
+      });
+
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!navbar.contains(e.target)) closeMenu();
       });
     })();
   </script>
