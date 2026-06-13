@@ -416,6 +416,69 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ═══════════════════════════
+   RESEÑAS
+═══════════════════════════ */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+@media (min-width: 600px) {
+  .reviews-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.review-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+.review-card__stars {
+  display: flex;
+  gap: .2rem;
+  color: var(--color-accent);
+  font-size: 1rem;
+}
+.review-card__text {
+  font-size: .95rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  flex: 1;
+}
+.review-card__author {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--color-border);
+}
+.review-card__name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .88rem;
+  color: var(--color-primary);
+}
+.review-card__role {
+  font-size: .8rem;
+  color: var(--color-muted);
+}
+
+[data-theme="dark"] .review-card {
+  background: #1a3347;
+  border-color: rgba(255,255,255,0.06);
+}
+[data-theme="dark"] .review-card__author {
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* ═══════════════════════════
    DARK MODE
 ═══════════════════════════ */
 [data-theme="dark"] {
