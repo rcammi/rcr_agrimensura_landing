@@ -416,6 +416,48 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ═══════════════════════════
+   CLIENTES
+═══════════════════════════ */
+.clientes__label {
+  text-align: center;
+  font-family: var(--font-head);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 1.75rem;
+}
+.clientes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 680px;
+  margin-inline: auto;
+}
+@media (min-width: 600px) {
+  .clientes-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.cliente-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  color: var(--color-primary);
+  opacity: .55;
+  transition: opacity .2s;
+}
+.cliente-logo:hover { opacity: .9; }
+.cliente-logo svg { width: 100%; max-width: 120px; height: auto; }
+.cliente-logo span {
+  font-family: var(--font-head);
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  letter-spacing: .03em;
+}
+
+/* ═══════════════════════════
    RESEÑAS
 ═══════════════════════════ */
 .reviews-grid {
