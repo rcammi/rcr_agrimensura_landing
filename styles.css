@@ -358,10 +358,13 @@ a { text-decoration: none; color: inherit; }
 }
 .clientes-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
-  max-width: 680px;
+  max-width: 800px;
   margin-inline: auto;
+}
+@media (min-width: 600px) {
+  .clientes-grid { grid-template-columns: repeat(4, 1fr); }
 }
 .cliente-logo {
   background: #ffffff;
