@@ -482,6 +482,33 @@ a { text-decoration: none; color: inherit; }
 [data-theme="dark"] .theme-toggle:hover { background: rgba(142,197,214,.10); }
 
 /* ═══════════════════════════
+   CTA MID-PAGE
+═══════════════════════════ */
+.cta-mid {
+  background: var(--color-primary);
+  padding-block: 2.5rem;
+}
+.cta-mid__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.cta-mid__text {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  max-width: 480px;
+}
+[data-theme="dark"] .cta-mid { background: var(--color-primary-d); }
+
+@media (max-width: 640px) {
+  .cta-mid__inner { flex-direction: column; text-align: center; }
+}
+
+/* ═══════════════════════════
    CONTACTO
 ═══════════════════════════ */
 .contacto__inner {
