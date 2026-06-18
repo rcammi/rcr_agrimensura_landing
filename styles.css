@@ -126,16 +126,6 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: .04em;
   white-space: nowrap;
 }
-.brand-sub {
-  display: none; /* oculto en mobile */
-  font-family: var(--font-head);
-  font-size: .75rem;
-  font-weight: 600;
-  color: var(--color-muted);
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
 /* Grupo de acciones (botón WA + theme toggle) */
 .navbar__actions {
   display: flex;
@@ -162,18 +152,21 @@ a { text-decoration: none; color: inherit; }
 }
 .theme-toggle:hover { background: rgba(49,77,89,.08); }
 
-@media (min-width: 768px) {
-  .brand-sub { display: block; }
-}
-
 /* ═══════════════════════════
    HERO
 ═══════════════════════════ */
 .hero {
-  background: var(--color-surface);
+  background: var(--color-primary-d) url('static/fondo_2.jpeg') center 20% / cover no-repeat;
   display: flex;
   align-items: center;
   padding-block: 2.75rem 2.25rem;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 30, 42, 0.62);
 }
 .hero__content {
   display: flex;
@@ -181,23 +174,27 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   text-align: center;
   gap: 0;
+  position: relative;
+  z-index: 1;
 }
 .hero__logo {
   width: min(260px, 68vw);
   height: auto;
   margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 28px rgba(0,0,0,.4);
 }
 .hero__title {
   font-family: var(--font-head);
   font-size: clamp(1.75rem, 5.5vw, 3.2rem);
   font-weight: 800;
   line-height: 1.2;
-  color: var(--color-primary);
+  color: #ffffff;
   margin-bottom: .9rem;
 }
 .hero__desc {
   font-size: .98rem;
-  color: var(--color-muted);
+  color: rgba(255,255,255,.80);
   margin-bottom: 1.75rem;
   max-width: 500px;
   line-height: 1.75;
@@ -537,6 +534,7 @@ a { text-decoration: none; color: inherit; }
   border-color: rgba(196,145,114,.28);
 }
 [data-theme="dark"] .theme-toggle:hover { background: rgba(142,197,214,.10); }
+[data-theme="dark"] .btn--whatsapp { color: #ffffff; }
 
 /* ═══════════════════════════
    CTA MID-PAGE
