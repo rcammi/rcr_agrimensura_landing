@@ -404,5 +404,44 @@
       });
     })();
   </script>
+  <script>
+    (function () {
+      document.querySelectorAll('.service-card').forEach(function (card) {
+        var icon   = card.querySelector('.service-card__icon');
+        var title  = card.querySelector('h3');
+        var desc   = card.querySelector('p');
+        var tags   = card.querySelector('.service-card__tags');
+
+        var toggle = document.createElement('button');
+        toggle.className = 'service-card__toggle';
+        toggle.setAttribute('type', 'button');
+        toggle.setAttribute('aria-expanded', 'false');
+
+        var chevron = document.createElement('i');
+        chevron.className = 'ti ti-chevron-down service-card__chevron';
+
+        if (icon)  toggle.appendChild(icon);
+        if (title) toggle.appendChild(title);
+        toggle.appendChild(chevron);
+
+        var body  = document.createElement('div');
+        body.className = 'service-card__body';
+        var inner = document.createElement('div');
+        inner.className = 'service-card__body-inner';
+        if (desc) inner.appendChild(desc);
+        if (tags) inner.appendChild(tags);
+        body.appendChild(inner);
+
+        card.innerHTML = '';
+        card.appendChild(toggle);
+        card.appendChild(body);
+
+        toggle.addEventListener('click', function () {
+          var open = card.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+      });
+    }());
+  </script>
 </body>
 </html>

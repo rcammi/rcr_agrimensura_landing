@@ -370,6 +370,54 @@ a { text-decoration: none; color: inherit; }
   white-space: nowrap;
 }
 
+/* ─── Acordeón mobile ─── */
+.service-card__toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: default;
+}
+.service-card__chevron { display: none; }
+.service-card__body-inner { padding-top: .85rem; }
+
+@media (max-width: 767px) {
+  .service-card__toggle {
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+  }
+  .service-card__toggle .service-card__icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+    margin-right: .85rem;
+    flex-shrink: 0;
+  }
+  .service-card__toggle h3 { margin-bottom: 0; flex: 1; }
+  .service-card__chevron {
+    display: block;
+    margin-left: .5rem;
+    font-size: 1rem;
+    color: var(--color-muted);
+    transition: transform .25s ease;
+    flex-shrink: 0;
+  }
+  .service-card.is-open .service-card__chevron { transform: rotate(180deg); }
+  .service-card__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+  }
+  .service-card.is-open .service-card__body { max-height: 600px; }
+}
+
 /* ─── Encabezados de grupo de servicios ─── */
 .services-group-header {
   grid-column: 1 / -1;
